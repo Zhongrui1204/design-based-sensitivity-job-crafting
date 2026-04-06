@@ -1,66 +1,61 @@
 # design-based-sensitivity-job-crafting
-Reproducible R code and data for design-based sensitivity analyses of pooled associations between job crafting dimensions and work engagement.
-# Design-Based Sensitivity Analyses for Job Crafting Meta-Analysis
 
-This repository contains the R script and supporting data files used to conduct the design-based sensitivity analyses reported in Section 2.3.2 of the manuscript:
+This repository contains sensitivity-analysis scripts and supporting files for the meta-analytic study:
 
-**Differential Effects of Job Crafting Dimensions on Work Engagement: A Meta-Analytic Review Based on the JD-R Framework**
+**Differential Effects of Job Crafting Dimensions on Work Engagement: A Meta-Analytic Review Based on the JD–R Framework**
 
-## Overview
+The repository was originally created to document the **design-based sensitivity analyses** reported in Section 2.3.2 of the manuscript and has since been expanded to include the **operationalization-based sensitivity analyses** reported in Section 2.3.3. Together, these materials provide a transparent record of two complementary robustness checks applied to the four focal job crafting dimensions.
 
-The purpose of these analyses was to examine whether the primary pooled estimates were disproportionately influenced by cross-sectional evidence. To address this question, the random-effects models were re-estimated after excluding cross-sectional and dyadic cross-sectional studies.
+## Repository scope
 
-Because a sufficient number of non-cross-sectional studies remained only for two dimensions, restricted pooled models were interpreted for:
+The repository currently documents two forms of sensitivity analysis:
 
-- Increasing Challenging Job Demands
-- Decreasing Hindering Job Demands
+### 1. Design-based sensitivity analyses
+These analyses re-estimate the random-effects models after excluding evidence derived from cross-sectional and dyadic cross-sectional designs, in order to evaluate whether the primary findings are materially dependent on studies with weaker temporal structure.
 
-Restricted pooled models were not interpreted for:
+### 2. Operationalization-based sensitivity analyses
+These analyses re-estimate the random-effects models after restricting the evidence base to more directly corresponding and fully differentiated JD–R-congruent operationalizations of the focal dimension. Broader three-dimensional formulations and estimates derived from partially restructured or integrated factor solutions are excluded where appropriate.
 
-- Increasing Structural Job Resources
-- Increasing Social Job Resources
+## Focal dimensions
 
-because only one non-cross-sectional estimate remained for each of these dimensions after exclusion of cross-sectional evidence.
+The analyses are organized around four JD–R-based job crafting dimensions:
 
-## Files Included
+- Increasing structural job resources
+- Increasing social job resources
+- Increasing challenging job demands
+- Decreasing hindering job demands
 
-- `design_based_sensitivity_analyses.R`  
-  R script used to perform the primary and design-restricted random-effects meta-analytic models.
+## Repository contents
 
-- `Increasing Challenging Job Demands.xlsx`  
-  Input data file for the design-based sensitivity analyses of increasing challenging job demands.
+Typical files in this repository include:
 
-- `Decreasing Hindering Job Demands.xlsx`  
-  Input data file for the design-based sensitivity analyses of decreasing hindering job demands.
+- `operationalization_based_sensitivity_analysis.R`  
+  R script for the operationalization-based sensitivity analyses reported in Section 2.3.3
 
-- `Increasing Challenging Job Demands.csv`  
-  CSV version of the corresponding input data.
+- design-based sensitivity analysis script(s) for Section 2.3.2
 
-- `Decreasing Hindering Job Demands.csv`  
-  CSV version of the corresponding input data.
+- dimension-specific input files used for restricted model estimation
 
-## Analytic Approach
+- summary outputs corresponding to manuscript tables and results text
 
-All models were estimated in **Fisher’s z** metric using **random-effects REML procedures** in R. For interpretive clarity, pooled estimates were subsequently converted back to **Pearson’s r**.
+## Analytical purpose
 
-The design-based sensitivity analyses compared:
+The purpose of these analyses is to evaluate the robustness of the primary meta-analytic conclusions under stricter assumptions. The design-based analyses address whether the findings are influenced by study design and temporal structure, whereas the operationalization-based analyses address whether the findings are influenced by construct comparability across alternative job crafting formulations.
 
-1. the **primary model**, based on all eligible studies for a given dimension; and  
-2. the **design-restricted model**, based only on non-cross-sectional studies.
+## Summary of findings
 
-## Main Findings
+Across the restricted models, the positive pooled associations for:
 
-For **Increasing Challenging Job Demands**, the positive pooled association with work engagement remained statistically significant after excluding cross-sectional studies, although the magnitude of the association was attenuated and heterogeneity was reduced.
+- increasing structural job resources
+- increasing social job resources
+- increasing challenging job demands
 
-For **Decreasing Hindering Job Demands**, the pooled estimate became more negative and heterogeneity was substantially reduced after excluding cross-sectional evidence, although the association remained marginal rather than conventionally significant.
+were broadly retained, whereas the pooled association for:
 
-## Software
+- decreasing hindering job demands
 
-The analyses were conducted in **R** using the following packages:
+remained weak and statistically nonsignificant. Overall, these results suggest that the principal dimension-specific conclusions of the meta-analysis are broadly robust across multiple sensitivity-analysis specifications.
 
-- `readxl`
-- `metafor`
+## Notes
 
-## Note
-
-This repository is intended to document the reproducible workflow for the design-based sensitivity analyses only. It does not include the full set of analyses reported in the manuscript.
+This repository is intended to support transparency and reproducibility for the sensitivity-analysis component of the manuscript. It complements, rather than replaces, the primary meta-analytic models reported in the main study.
